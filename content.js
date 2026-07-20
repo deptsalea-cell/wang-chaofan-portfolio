@@ -32,10 +32,10 @@ const portfolioContent = {
   contact: {
     copy: "如果你正在寻找一位能把现场、团队与结果连接起来的人，欢迎和我聊聊。",
     email: "707132865@qq.com",
-    phone: "待补充手机号",
-    image: "portrait.jpg",
-    imageAlt: "微信二维码占位图",
-    imageNote: "微信二维码待替换：上传图片后，将 image 改为新文件名。",
+    phone: "13285242426",
+    image: "wechat-qr.jpg",
+    imageAlt: "王超凡的微信二维码",
+    imageNote: "微信二维码：扫码添加我为好友。",
     resume: "resume.pdf"
   }
 };
@@ -73,5 +73,3 @@ $("[data-resume-link]").href = portfolioContent.contact.resume;
 
 const observer = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add("visible"); }), { threshold: 0.12 });
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
-// 网站内容集中维护于此。更新文字时可直接修改 index.html；本文件预留给后续接入 CMS/JSON。
-document.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener('click',()=>window.scrollTo({top:document.querySelector(link.getAttribute('href')).offsetTop-70,behavior:'smooth'})));
