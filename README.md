@@ -15,10 +15,20 @@
 ## 更换简历与微信二维码
 
 - 新简历：在 GitHub 上传新的 PDF，并将其命名为 `resume.pdf`（选择覆盖原文件）。
-- 微信二维码：上传图片到仓库根目录，例如 `wechat-qr.png`；然后在 `content.js` 的 `contact` 区域，将 `image: "portrait.jpg"` 改成 `image: "wechat-qr.png"`。
-- 手机号：在 `content.js` 的 `contact` 区域，把 `phone: "待补充手机号"` 改成你的真实号码。
+- 微信二维码：当前使用的是 `wechat-qr.jpg`。后续上传新图片后，在 `content.js` 的 `contact` 区域把 `image` 改为新文件名即可。
+- 手机号：在 `content.js` 的 `contact` 区域修改 `phone` 的号码即可。
 
 > 手机号、二维码等信息会公开显示在网站上，请只填写愿意公开的信息。
+
+## 新增项目经历
+
+在 `content.js` 中找到 `projects: [`，在数组中复制一条项目内容并修改文字。例如：
+
+```js
+{ tag: "PROJECT TYPE", title: "项目名称", copy: "项目背景、你的职责和成果简介。" },
+```
+
+放在最后一条项目的后面时，请先给前一条末尾补上英文逗号。提交后等待约 1–2 分钟，项目卡片会自动出现在网站中。
 
 ## 文件说明
 
@@ -30,22 +40,3 @@
 ## Netlify 发布
 
 Netlify 已配置为从 `main` 分支发布：推送或在 GitHub 提交到 `main` 后会自动更新正式网站。其他分支和 Pull Request 会生成预览链接，供发布前检查。
-# 王超凡 · 个人主页
-
-这是一个纯静态网站，可直接部署到 GitHub Pages、Cloudflare Pages 或 Vercel。
-
-## 本地预览
-
-在此目录启动任意静态服务器即可，例如：
-
-```bash
-npx serve .
-```
-
-## 更新内容
-
-主要文字目前集中在 `index.html` 的各个 section 中；联系区域的图片目前使用简历中的证件照，收到微信二维码后将 `portrait.jpg` 替换即可，简历替换 `resume.pdf`。后续可把内容迁移到 `content.js` 或 CMS，无需改动页面结构。
-
-## 部署
-
-将整个文件夹推送到 GitHub，在 Vercel/Cloudflare Pages 中导入仓库，Framework 选择 **Other / Static**，构建命令留空，输出目录填 `/`。部署后会获得公开网址。
